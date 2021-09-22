@@ -9,7 +9,7 @@ function getURL(text){
 
 function clickhandler()
 {
-    var input1=input-text.value;
+    var input1=inputtext.value;
     fetch(getURL(input1))
     .then(response=>response.json)
     .then(json=>{
