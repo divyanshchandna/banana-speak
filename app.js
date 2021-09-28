@@ -7,20 +7,23 @@ function getURL(text){
     return serverurl+"?"+"text="+text
 }
 
-function clickhandler()
-{
-    var input1=inputtext.value;
+function clickhandler() {
+    var input1= inputtext.value; 
+
+    
     fetch(getURL(input1))
-    .then(response=>response.json)
-    .then(json=>{
-        var translatedtxt=json.contents.translated;
-        output.innertext=translatedtxt;
-    })
-    .catch(errorHandler)
+        .then(response => response.json())
+        .then(json => {
+            var translatedtext = json.contents.translated;
+            output.innerText = translatedtext; 
+           })
+        .catch(errorHandler)
 };
+
 function errorHandler(error) {
     console.log("error occured", error);
-    alert("something wrong with server! try again after some time")
+    alert("Try again after some time")
 }
 
 btntranslate.addEventListener("click",clickhandler)
+
